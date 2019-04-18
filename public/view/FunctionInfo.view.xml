@@ -1,0 +1,124 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.standard.generateChaincode.controller.FunctionInfo" xmlns="sap.m"
+	xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<Page showHeader="true" title="SAP Cloud Platform Chaincode Generator" showFooter="true" showNavButton="false">
+		<content>
+			<Breadcrumbs currentLocationText="Current Location" class="sapUiResponsiveMargin">
+				<links>
+					<Link text="Manage Projects" textAlign="Begin" width="auto" target="_self" wrapping="false" enabled="true" visible="true" emphasized="false"
+						subtle="false" press="_onLinkPress"/>
+					<Link text="Project Details" textAlign="Begin" width="auto" target="_blank" wrapping="false" enabled="true" visible="true"
+						emphasized="false" subtle="false" press="_onLinkPress1"/>
+				</links>
+			</Breadcrumbs>
+			<form:Form width="auto" editable="true" visible="true" class="sapUiResponsiveMargin">
+				<form:title>
+					<core:Title text="Read function" level="Auto"/>
+				</form:title>
+				<form:formContainers>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="Function Name" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input type="Text" showValueHelp="false" enabled="false" visible="true" width="auto" valueHelpOnly="false" maxLength="0"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="Parameters" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input value="attribute 1" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto" valueHelpOnly="false"
+										maxLength="256"/>
+									<CheckBox text="Enabled" selected="true" editable="true" enabled="false" visible="true" width="auto" textDirection="Inherit"
+										wrapping="false" useEntireWidth="true"/>
+									<CheckBox text="Required" selected="true" editable="true" enabled="false" visible="true" width="auto" textDirection="Inherit"
+										wrapping="false" useEntireWidth="true"/>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+				</form:formContainers>
+				<form:layout>
+					<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+				</form:layout>
+			</form:Form>
+			<form:Form width="auto" editable="true" visible="true" class="sapUiResponsiveMargin">
+				<form:title>
+					<core:Title text="Create function" level="Auto"/>
+				</form:title>
+				<form:formContainers>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="Function Name" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input type="Text" showValueHelp="false" enabled="false" visible="true" width="auto" valueHelpOnly="false" maxLength="0"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="Parameters" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input value="attribute 1" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto" valueHelpOnly="false" maxLength="0"/>
+									<CheckBox text="Enabled" selected="true" editable="true" enabled="false" visible="true" width="auto" textDirection="Inherit"
+										wrapping="false" useEntireWidth="true"/>
+									<CheckBox text="Required" selected="true" editable="true" enabled="false" visible="true" width="auto" textDirection="Inherit"
+										wrapping="false" useEntireWidth="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input value="attribute 2" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto" valueHelpOnly="false" maxLength="0"/>
+									<CheckBox text="Enabled" selected="false" editable="true" enabled="true" visible="true" width="auto" textDirection="Inherit"
+										wrapping="false" useEntireWidth="true"/>
+									<CheckBox text="Required" selected="false" editable="true" enabled="true" visible="true" width="auto" textDirection="Inherit"
+										wrapping="false" useEntireWidth="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input value="attribute 3" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto" valueHelpOnly="false" maxLength="0"/>
+									<CheckBox text="Enabled" selected="false" editable="true" enabled="true" visible="true" width="auto" textDirection="Inherit"
+										wrapping="false" useEntireWidth="true"/>
+									<CheckBox text="Required" selected="false" editable="true" enabled="true" visible="true" width="auto" textDirection="Inherit"
+										wrapping="false" useEntireWidth="true"/>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+				</form:formContainers>
+				<form:layout>
+					<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+				</form:layout>
+			</form:Form>
+			<HBox alignItems="Stretch" direction="Row" fitContainer="false" width="auto" height="auto" justifyContent="End" renderType="Div"
+				visible="true" displayInline="false">
+				<items>
+					<Button text="Save" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+						class="sapUiSmallMarginTop sapUiSmallMarginEnd"/>
+					<Button text="Cancel" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+						class="sapUiSmallMarginTop sapUiSmallMarginEnd"/>
+				</items>
+				<layoutData/>
+			</HBox>
+		</content>
+		<footer/>
+		<headerContent/>
+		<subHeader/>
+		<customHeader/>
+	</Page>
+</mvc:View>

@@ -1,0 +1,111 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.standard.generateChaincode.controller.ListOfProjects" xmlns="sap.m">
+	<Page showHeader="true" title="SAP Cloud Platform Chaincode Generator" showFooter="false" showNavButton="false">
+		<content>
+			<ObjectHeader intro="" title="Manage Projects" icon="sap-icon://basket" number="" numberUnit="" numberState="None" titleActive="true"
+				backgroundDesign="Translucent" condensed="true" visible="true">
+				<attributes/>
+				<statuses/>
+				<markers/>
+			</ObjectHeader>
+			<VBox alignItems="Stretch" direction="Column" fitContainer="false" width="auto" height="auto" justifyContent="Start" renderType="Div"
+				visible="true" displayInline="false">
+				<items>
+					<Table width="auto" noDataText="No data" mode="MultiSelect" showSeparators="All" growing="true" growingThreshold="20"
+						growingScrollToLoad="true" class="sapUiResponsiveMargin" items="{ path: 'modelPath>/arrayName' }" id="tableId">
+						<infoToolbar>
+							<Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
+								<content>
+									<Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</content>
+							</Toolbar>
+						</infoToolbar>
+						<headerToolbar>
+							<OverflowToolbar width="auto" height="auto" design="Transparent" visible="true" enabled="true">
+								<content>
+									<Title text="Projects" titleStyle="Auto" width="auto" textAlign="Begin" visible="true" wrapping="false"/>
+									<ToolbarSpacer width=""/>
+									<OverflowToolbarButton text="Sort" type="Transparent" icon="sap-icon://add" iconFirst="true" width="auto" enabled="true" visible="true"
+										iconDensityAware="false" press="_onOverflowToolbarButtonPress"/>
+									<OverflowToolbarButton text="Sort" type="Transparent" icon="sap-icon://delete" iconFirst="true" width="auto" enabled="true" visible="true"
+										iconDensityAware="false" press="_onOverflowToolbarButtonPress1"/>
+									<OverflowToolbarButton text="Filter" type="Transparent" icon="sap-icon://upload" iconFirst="true" width="auto" enabled="true" visible="true"
+										iconDensityAware="false"/>
+									<OverflowToolbarButton text="Group" type="Transparent" icon="sap-icon://download" iconFirst="true" width="auto" enabled="false"
+										visible="true" iconDensityAware="false"/>
+									<OverflowToolbarButton text="Settings" type="Transparent" icon="sap-icon://action-settings" iconFirst="true" width="auto" enabled="true"
+										visible="true" iconDensityAware="false"/>
+								</content>
+							</OverflowToolbar>
+						</headerToolbar>
+						<columns>
+							<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+								<header>
+									<Text text="Project Name" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"
+										class="sapUiResponsiveMargin"/>
+								</header>
+								<footer/>
+							</Column>
+							<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+								<header>
+									<Text text="Description" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"
+										class="sapUiResponsiveMargin"/>
+								</header>
+								<footer/>
+							</Column>
+							<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+								<header>
+									<Text text="Created On" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"
+										class="sapUiResponsiveMargin"/>
+								</header>
+								<footer/>
+							</Column>
+							<Column width="5%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+								<header>
+									<Text text="" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</header>
+								<footer/>
+							</Column>
+						</columns>
+						<items id="rowItemsIdInTable">
+							<ColumnListItem type="Active" press="_onRowPress">
+								<cells>
+									<ObjectIdentifier title="" text="{modelPath>projectName}" titleActive="false" visible="true" class="sapUiResponsiveMargin"/>
+									<Text text="{modelPath>projectDescription}" width="auto" maxLines="1" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"
+										class="sapUiResponsiveMargin"/>
+									<Text text="{modelPath>createdOn}" width="auto" maxLines="1" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"
+										class="sapUiResponsiveMargin"/>
+									<Button text="" type="Transparent" icon="sap-icon://slim-arrow-right" iconFirst="true" width="auto" enabled="true" visible="true"
+										iconDensityAware="false"/>
+								</cells>
+							</ColumnListItem>
+							<!--<ColumnListItem type="Active">
+								<cells>
+									<ObjectIdentifier title="" text="Project 2" titleActive="false" visible="true" class="sapUiResponsiveMargin"/>
+									<Text text="Project 2 Description" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"
+										class="sapUiResponsiveMargin"/>
+									<Text text="03/19/2019" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"
+										class="sapUiResponsiveMargin"/>
+									<Button text="" type="Transparent" icon="sap-icon://slim-arrow-right" iconFirst="true" width="auto" enabled="true" visible="true"
+										iconDensityAware="false"/>
+								</cells>
+							</ColumnListItem>-->
+						</items>
+					</Table>
+				</items>
+				<layoutData/>
+			</VBox>
+		</content>
+		<footer>
+			<OverflowToolbar width="100%" height="46px" design="Auto" enabled="true" visible="true">
+				<content>
+					<ToolbarSpacer width=""/>
+					<Button text="Save" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+					<Button text="Cancel" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+				</content>
+			</OverflowToolbar>
+		</footer>
+		<headerContent/>
+		<subHeader/>
+		<customHeader/>
+	</Page>
+</mvc:View>

@@ -1,0 +1,57 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.standard.generateChaincode.controller.GenerateCc" xmlns="sap.m"
+	xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<Page showHeader="true" title="SAP Cloud Platform Chaincode Generator" showFooter="true" showNavButton="false">
+		<content>
+			<Breadcrumbs currentLocationText="Current Location" class="sapUiResponsiveMargin">
+				<links>
+					<Link text="Manage Projects" textAlign="Begin" width="auto" target="_self" wrapping="false" enabled="true" visible="true" emphasized="false"
+						subtle="false" press="_onLinkPress"/>
+					<Link text="Project Details" textAlign="Begin" width="auto" target="_blank" wrapping="false" enabled="true" visible="true"
+						emphasized="false" subtle="false" press="_onLinkPress1"/>
+				</links>
+			</Breadcrumbs>
+			<HBox alignItems="Stretch" direction="Row" fitContainer="false" width="auto" height="auto" justifyContent="End" renderType="Div"
+				visible="true" displayInline="false">
+				<items>
+					<Button text="Download" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+						class="sapUiSmallMarginTop sapUiSmallMarginEnd"/>
+				</items>
+				<layoutData/>
+			</HBox>
+			<form:Form width="auto" editable="true" visible="true" class="sapUiResponsiveMargin">
+				<form:title>
+					<core:Title text="manifest.yaml" level="Auto" class="sapUiResponsiveMargin"/>
+				</form:title>
+				<form:formContainers/>
+				<form:layout>
+					<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+				</form:layout>
+			</form:Form>
+			<TextArea rows="5" cols="180" maxLength="5000" wrapping="Soft" enabled="true" visible="true" class="sapUiResponsiveMargin"/>
+			<form:Form width="auto" editable="true" visible="true" class="sapUiResponsiveMargin">
+				<form:title>
+					<core:Title text="entityName.yaml" level="Auto"/>
+				</form:title>
+				<form:formContainers/>
+				<form:layout>
+					<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+				</form:layout>
+			</form:Form>
+			<TextArea rows="10" cols="180" maxLength="10000" wrapping="None" enabled="true" visible="true" class="sapUiResponsiveMargin"/>
+			<form:Form width="auto" editable="true" visible="true" class="sapUiResponsiveMargin">
+				<form:title>
+					<core:Title text="entityName.go" level="Auto"/>
+				</form:title>
+				<form:formContainers/>
+				<form:layout>
+					<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+				</form:layout>
+			</form:Form>
+			<TextArea rows="10" cols="180" maxLength="10000" wrapping="None" enabled="true" visible="true" class="sapUiResponsiveMargin"/>
+		</content>
+		<footer/>
+		<headerContent/>
+		<subHeader/>
+		<customHeader/>
+	</Page>
+</mvc:View>

@@ -1,0 +1,149 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.standard.generateChaincode.controller.EntityAndAttributeInfo"
+	xmlns="sap.m" xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<Page showHeader="true" title="SAP Cloud Platform Chaincode Generator" showFooter="true" showNavButton="false">
+		<content>
+			<Breadcrumbs currentLocationText="Current Location" class="sapUiResponsiveMargin" id="entityAndAttributeBreadcrumbsId">
+				<links>
+					<Link text="Manage Projects" textAlign="Begin" width="auto" target="_self" wrapping="false" enabled="true" visible="true" emphasized="false"
+						subtle="false" press="_onLinkPress"/>
+					<Link text="Entity Info" textAlign="Begin" width="auto" target="_self" wrapping="false" enabled="true" visible="true" emphasized="false"
+						subtle="false" press="_onLinkPress1"/>
+				</links>
+			</Breadcrumbs>
+			<VBox alignItems="Stretch" direction="Column" fitContainer="false" width="auto" height="auto" justifyContent="Start" renderType="Div"
+				visible="true" displayInline="false">
+				<items>
+					<form:Form width="auto" editable="true" visible="true" class="sapUiResponsiveMargin">
+						<form:title>
+							<core:Title text="Entity Information" level="Auto" class="sapUiResponsiveMargin"/>
+						</form:title>
+						<form:formContainers>
+							<form:FormContainer visible="true">
+								<form:formElements>
+									<form:FormElement visible="true">
+										<form:label>
+											<Label text="Entity Name" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+										</form:label>
+										<form:fields>
+											<Input placeholder="Enter Entity Name" type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false"
+												maxLength="256" value="{modelPath>/arrayName/entityName}"/>
+										</form:fields>
+									</form:FormElement>
+									<form:FormElement visible="true">
+										<form:label>
+											<Label text="Entity Description" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+										</form:label>
+										<form:fields>
+											<Input placeholder="Enter Entity Description" type="Text" showValueHelp="false" enabled="true" visible="true" width="auto"
+												valueHelpOnly="false" maxLength="256" value="{modelPath>/arrayName/entityDescription}"/>
+										</form:fields>
+									</form:FormElement>
+								</form:formElements>
+								<form:title/>
+							</form:FormContainer>
+						</form:formContainers>
+						<form:layout>
+							<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+						</form:layout>
+					</form:Form>
+					<form:Form width="auto" editable="true" visible="true" class="sapUiResponsiveMargin">
+						<form:title>
+							<core:Title text="Attributes" level="Auto"/>
+						</form:title>
+						<form:formContainers/>
+						<form:layout>
+							<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+						</form:layout>
+					</form:Form>
+					<Table width="auto" noDataText="No data" mode="None" showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true"
+						class="sapUiResponsiveMargin" items="{ path: 'modelPath>/arrayName/attributeInfo' }" id="attributesTableId">
+						<infoToolbar>
+							<Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
+								<content>
+									<Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</content>
+							</Toolbar>
+						</infoToolbar>
+						<headerToolbar>
+							<OverflowToolbar width="auto" height="auto" design="Transparent" visible="true" enabled="true">
+								<content>
+									<Title text="" titleStyle="Auto" width="auto" textAlign="Begin" visible="true" wrapping="false"/>
+									<ToolbarSpacer width=""/>
+									<OverflowToolbarButton text="Sort" type="Transparent" icon="sap-icon://add" iconFirst="true" width="auto" enabled="true" visible="true"
+										iconDensityAware="false" press="_onOverflowToolbarButtonPress"/>
+									<OverflowToolbarButton text="Filter" type="Transparent" icon="sap-icon://delete" iconFirst="true" width="auto" enabled="true" visible="true"
+										iconDensityAware="false"/>
+								</content>
+							</OverflowToolbar>
+						</headerToolbar>
+						<columns>
+							<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Phone" demandPopin="false" popinDisplay="Inline" mergeDuplicates="false">
+								<header>
+									<Text text="Name" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"
+										class="sapUiResponsiveMargin"/>
+								</header>
+								<footer/>
+							</Column>
+							<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+								<header>
+									<Text text="Description" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"
+										class="sapUiResponsiveMargin"/>
+								</header>
+								<footer/>
+							</Column>
+							<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+								<header>
+									<Text text="Business Data Type" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"
+										class="sapUiResponsiveMargin"/>
+								</header>
+								<footer/>
+							</Column>
+							<Column width="auto" hAlign="Center" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+								<header>
+									<Text text="Key" width="auto" maxLines="1" wrapping="false" textAlign="End" textDirection="Inherit" visible="true"
+										class="sapUiResponsiveMargin"/>
+								</header>
+								<footer/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem type="Active">
+								<cells>
+									<Input type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" maxLength="256"
+										class="sapUiResponsiveMargin" value="{modelPath>attributeName}"/>
+									<Input type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" maxLength="256"
+										class="sapUiResponsiveMargin" value="{modelPath>attributeDescription}"/>
+									<ComboBox editable="true" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%" class="sapUiResponsiveMargin"
+										selectionChange="_onComboBoxSelectionChange" selectedKey="{modelPath>attributeType}">
+										<items>
+											<core:Item text="String" enabled="true" key="string"/>
+											<core:Item text="Integer" enabled="true" key="integer"/>
+											<core:Item text="Boolean" enabled="true" key="bool"/>
+										</items>
+									</ComboBox>
+									<CheckBox text="" selected="{modelPath>isKey}" editable="true" enabled="true" visible="true" width="auto" textDirection="Inherit" wrapping="false"
+										useEntireWidth="true" class="sapUiResponsiveMargin"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+					<HBox alignItems="Stretch" direction="Row" fitContainer="false" width="auto" height="auto" justifyContent="End" renderType="Div"
+						visible="true" displayInline="false">
+						<items>
+							<Button text="Save" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+								class="sapUiSmallMarginTop sapUiSmallMarginEnd" press="_onButtonPress"/>
+							<Button text="Cancel" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+								class="sapUiSmallMarginTop sapUiSmallMarginEnd" press="_onButtonPress1"/>
+						</items>
+						<layoutData/>
+					</HBox>
+				</items>
+				<layoutData/>
+			</VBox>
+		</content>
+		<footer/>
+		<headerContent/>
+		<subHeader/>
+		<customHeader/>
+	</Page>
+</mvc:View>

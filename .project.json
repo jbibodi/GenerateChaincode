@@ -1,0 +1,19 @@
+{
+	"dataBinding": {
+		"/webapp/view/ListOfProjects.view.xml": {
+			"entitySet": ""
+		},
+		"/webapp/view/ProjectDetails.view.xml": {
+			"entitySet": ""
+		},
+		"/webapp/view/EntityAndAttributeInfo.view.xml": {
+			"entitySet": ""
+		},
+		"/webapp/view/FunctionInfo.view.xml": {
+			"entitySet": ""
+		},
+		"/webapp/view/GenerateCc.view.xml": {
+			"entitySet": ""
+		}
+	}
+}

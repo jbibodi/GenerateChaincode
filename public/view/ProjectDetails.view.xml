@@ -1,0 +1,167 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.standard.generateChaincode.controller.ProjectDetails" xmlns="sap.m"
+	xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<Page showHeader="true" title="SAP Cloud Platform Chaincode Generator" showFooter="true" showNavButton="false">
+		<content>
+			<Breadcrumbs currentLocationText="" class="sapUiResponsiveMargin" id="breadcrumbsId">
+				<links>
+					<Link text="Manage Projects" textAlign="Begin" width="auto" target="_self" wrapping="false" enabled="true" visible="true" emphasized="false"
+						subtle="false" press="_onLinkPress"/>
+				</links>
+			</Breadcrumbs>
+			<IconTabBar expandable="false" expanded="true" applyContentPadding="false" backgroundDesign="Solid" upperCase="false" visible="true"
+				selectedKey="projectInfoTab" select="onSelectChanged" id="iconToolBarId">
+				<items>
+					<IconTabFilter icon="sap-icon://hint" class="customBackgroundIcon" text="Project Info" count="" design="Vertical" showAll="false"
+						textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false" key="projectInfoTab" >
+						<content>
+							<form:Form width="auto" editable="true" visible="true" class="sapUiResponsiveMargin">
+								<form:title>
+									<core:Title text="Project Information" level="Auto"/>
+								</form:title>
+								<form:formContainers>
+									<form:FormContainer visible="true">
+										<form:formElements>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="Project Name" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:label>
+												<form:fields>
+													<Input placeholder="Enter Project Name (Cannot be changed)" type="Text" showValueHelp="false" enabled="true" visible="true" width="auto"
+														valueHelpOnly="false" maxLength="256" id="projectNameId" value="{modelPath>/arrayName/projectName}"/>
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="Project Description" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:label>
+												<form:fields>
+													<Input placeholder="Enter Project Description" type="Text" showValueHelp="false" enabled="true" visible="true" width="auto"
+														valueHelpOnly="false" maxLength="256" id="projectDescriptionId" value="{modelPath>/arrayName/projectDescription}"/>
+												</form:fields>
+											</form:FormElement>
+										</form:formElements>
+										<form:title/>
+									</form:FormContainer>
+								</form:formContainers>
+								<form:layout>
+									<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+								</form:layout>
+							</form:Form>
+							<HBox alignItems="Stretch" direction="Row" fitContainer="false" width="auto" height="auto" justifyContent="End" renderType="Div"
+								visible="true" displayInline="false">
+								<items>
+									<Button text="Save" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+										class="sapUiSmallMarginEnd" press="_onButtonPress" id="saveProjectInfoButtonId"/>
+									<Button text="Cancel" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+										class="sapUiSmallMarginEnd" press="_onButtonPress1" id="cancelProjectInfoId"/>
+								</items>
+								<layoutData/>
+							</HBox>
+						</content>
+					</IconTabFilter>
+					<IconTabSeparator icon="" iconDensityAware="false"/>
+					<IconTabFilter icon="sap-icon://insurance-house" class="customBackgroundIcon" text="Entity Info" count="" design="Vertical" showAll="false"
+						textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false" key="entityInfoTab">
+						<content>
+							<VBox alignItems="Stretch" direction="Column" fitContainer="false" width="auto" height="auto" justifyContent="Start" renderType="Div"
+								visible="true" displayInline="false">
+								<items>
+									<Table width="auto" noDataText="No data" mode="MultiSelect" showSeparators="All" growing="true" growingThreshold="20"
+										growingScrollToLoad="true" class="sapUiResponsiveMargin" items="{ path: 'modelPath>/arrayName/entityInfo' }" id="entityInfoTableId">
+										<infoToolbar>
+											<Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
+												<content>
+													<Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</content>
+											</Toolbar>
+										</infoToolbar>
+										<headerToolbar>
+											<OverflowToolbar width="auto" height="auto" design="Transparent" visible="true" enabled="true">
+												<content>
+													<Title text="Entity Information" titleStyle="Auto" width="auto" textAlign="Begin" visible="true" wrapping="false"/>
+													<ToolbarSpacer width=""/>
+													<OverflowToolbarButton text="Sort" type="Transparent" icon="sap-icon://add" iconFirst="true" width="auto" enabled="true" visible="true"
+														iconDensityAware="false" press="_onOverflowToolbarButtonPress"/>
+													<OverflowToolbarButton text="Sort" type="Transparent" icon="sap-icon://delete" iconFirst="true" width="auto" enabled="true" visible="true"
+														iconDensityAware="false"/>
+													<OverflowToolbarButton text="Settings" type="Transparent" icon="sap-icon://action-settings" iconFirst="true" width="auto" enabled="true"
+														visible="true" iconDensityAware="false"/>
+												</content>
+											</OverflowToolbar>
+										</headerToolbar>
+										<columns>
+											<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+												<header>
+													<Text text="Entity Name" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"
+														class="sapUiResponsiveMargin"/>
+												</header>
+												<footer/>
+											</Column>
+											<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+												<header>
+													<Text text="Description" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"
+														class="sapUiResponsiveMargin"/>
+												</header>
+												<footer/>
+											</Column>
+											<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+												<header>
+													<Text text="Function Information" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"
+														class="sapUiResponsiveMargin"/>
+												</header>
+												<footer/>
+											</Column>
+											<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+												<header>
+													<Text text="Preview Chaincode" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"
+														class="sapUiResponsiveMargin"/>
+												</header>
+												<footer/>
+											</Column>
+											<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+												<header>
+													<Text text="Export Chaincode" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"
+														class="sapUiResponsiveMargin"/>
+												</header>
+												<footer/>
+											</Column>
+											<Column width="5%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+												<header>
+													<Text text="" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</header>
+												<footer/>
+											</Column>
+										</columns>
+										<items id="entityInfoItemsId">
+											<ColumnListItem type="Active" press="_onRowPress">
+												<cells>
+													<ObjectIdentifier title="" text="{modelPath>entityName}" titleActive="false" visible="true" class="sapUiResponsiveMargin"/>
+													<Text text="{modelPath>entityDescription}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"
+														class="sapUiResponsiveMargin"/>
+													<Button text="" type="Transparent" icon="sap-icon://process" iconFirst="true" width="auto" enabled="true" visible="true"
+														tooltip="Function information for" iconDensityAware="false" class="sapUiMediumMarginBegin" press="_onButtonPress2"/>
+													<Button text="" type="Transparent" icon="sap-icon://display" iconFirst="true" width="auto" enabled="true" visible="true"
+														iconDensityAware="false" class="sapUiMediumMarginBegin" press="_onButtonPress3"/>
+													<Button text="" type="Transparent" icon="sap-icon://generate-shortcut" iconFirst="true" width="auto" enabled="true" visible="true"
+														tooltip="Generate Chaincode for" iconDensityAware="false" class="sapUiMediumMarginBegin" press="_onButtonPress4"/>
+													<Button text="" type="Transparent" icon="sap-icon://slim-arrow-right" iconFirst="true" width="auto" enabled="true" visible="true"
+														iconDensityAware="false"/>
+												</cells>
+											</ColumnListItem>
+										</items>
+									</Table>
+								</items>
+								<layoutData/>
+							</VBox>
+						</content>
+					</IconTabFilter>
+				</items>
+				<content/>
+			</IconTabBar>
+		</content>
+		<footer/>
+		<headerContent/>
+		<subHeader/>
+		<customHeader/>
+	</Page>
+</mvc:View>
